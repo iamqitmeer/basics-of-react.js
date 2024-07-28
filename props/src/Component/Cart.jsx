@@ -1,9 +1,13 @@
 import React from 'react'
+import './cart.css'
 
-function Cart() {
+function Cart({name, description}) {
   return (
-    <div>
-    <h1>Cart</h1>
+    <div className='cart'>
+    <h1>{name}</h1>
+    <p>{description}</p>
+    <button>Hire Us</button>
+    <button>Contact Us</button>
     </div>
   )
 }
