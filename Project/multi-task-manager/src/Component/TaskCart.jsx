@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function TaskCart({ title, onData, index }) {
+function TaskCart({ title, onData, index,deleteMainTask }) {
   let [task, setTask] = useState();
   let [list, setList] = useState([]);
   let [flag, setFlag] = useState(true);
@@ -48,7 +48,7 @@ function TaskCart({ title, onData, index }) {
       <ul className="flex items-center gap-4">
         <li className="cursor-pointer">Comment</li>
         <li className="cursor-pointer">Edit</li>
-        <li className="cursor-pointer">
+        <li onClick={() => deleteMainTask(index)} className="cursor-pointer">
           Delete
         </li>
       </ul>

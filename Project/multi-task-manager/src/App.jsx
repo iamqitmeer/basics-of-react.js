@@ -19,6 +19,12 @@ function App() {
     }
   };
 
+  function deleteMainTask(index) {
+    let newArr = [...createTask]
+    newArr.splice(index,1)
+    setCreateTask(newArr)
+    // console.log("Clicked", index);
+  }
 
   return (
     <div className="flex items-center p-14 flex-col w-full h-screen gap-6">
@@ -48,7 +54,7 @@ function App() {
 
         <div className="flex items-center justify-center flex-wrap gap-12">
           {createTask.map((data, index) => {
-            return <TaskCart  index={index} title={data} />;
+            return <TaskCart deleteMainTask={deleteMainTask} key={index} index={index} title={data} />;
           })}
         </div>
       </div>
