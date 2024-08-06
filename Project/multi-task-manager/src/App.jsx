@@ -6,6 +6,8 @@ function App() {
   let [taskName, setTaskName] = useState("");
   let [createTask, setCreateTask] = useState([]);
   let [existErr, setExistErr] = useState("");
+  let [isBTNClicked, setIsBTNClicked] = useState(false);
+  let [currentIndex, setCurrentIndex] = useState();
 
   let handleClick = () => {
     let newArr = [...createTask];
@@ -20,10 +22,27 @@ function App() {
   };
 
   function deleteMainTask(index) {
-    let newArr = [...createTask]
-    newArr.splice(index,1)
+    let newArr = [...createTask];
+    newArr.splice(index, 1);
+    setCreateTask(newArr);
+  }
+
+  function editMainTask(index) {
+    setIsBTNClicked(true);
+    // console.log("Edit Clicked", index);
+
+    let newArr = [...createTask];
+    setTaskName(newArr[index]);
+    setCurrentIndex(index);
+  }
+
+  function updateTask() {
+    let newArr = [...createTask];
+    newArr[currentIndex] = taskName
     setCreateTask(newArr)
-    // console.log("Clicked", index);
+
+    setTaskName("")
+    setIsBTNClicked(false)
   }
 
   return (
@@ -41,12 +60,21 @@ function App() {
             placeholder="create your task container"
             required
           />
-          <button
-            onClick={handleClick}
-            className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Create Task
-          </button>
+          {isBTNClicked ? (
+            <button
+              onClick={updateTask}
+              className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Update Task
+            </button>
+          ) : (
+            <button
+              onClick={handleClick}
+              className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Create Task
+            </button>
+          )}
         </div>
         <div className="ml-60 w-[20%]">
           <span className="text-red-700 ml-4 text-sm">{existErr}</span>
@@ -54,7 +82,15 @@ function App() {
 
         <div className="flex items-center justify-center flex-wrap gap-12">
           {createTask.map((data, index) => {
-            return <TaskCart deleteMainTask={deleteMainTask} key={index} index={index} title={data} />;
+            return (
+              <TaskCart
+                deleteMainTask={deleteMainTask}
+                editMainTask={editMainTask}
+                key={index}
+                index={index}
+                title={data}
+              />
+            );
           })}
         </div>
       </div>
