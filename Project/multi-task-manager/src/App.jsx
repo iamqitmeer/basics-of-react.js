@@ -14,10 +14,11 @@ function App() {
     } else {
       newArr.push(taskName);
       setCreateTask(newArr);
-      setTaskName("")
+      setTaskName("");
       setExistErr("");
     }
   };
+
 
   return (
     <div className="flex items-center p-14 flex-col w-full h-screen gap-6">
@@ -47,7 +48,7 @@ function App() {
 
         <div className="flex items-center justify-center flex-wrap gap-12">
           {createTask.map((data, index) => {
-            return <TaskCart index={index} title={data} />;
+            return <TaskCart  index={index} title={data} />;
           })}
         </div>
       </div>

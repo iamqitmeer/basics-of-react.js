@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-function TaskCart({ title }) {
+function TaskCart({ title, onData, index }) {
   let [task, setTask] = useState();
   let [list, setList] = useState([]);
   let [flag, setFlag] = useState(true);
   let [currentIndex, setCurrentIndex] = useState();
-  let [isEdited, setIsEdited] = useState(false);
+  let [isEdited, setIsEdited] = useState(null);
 
   let handleClick = () => {
     let newArr = [...list];
@@ -22,7 +22,7 @@ function TaskCart({ title }) {
   };
 
   let editTask = (index) => {
-    setIsEdited(true);
+    setIsEdited(index);
     setFlag(false);
     let newArr = [...list];
     setTask(newArr[index]);
@@ -36,7 +36,7 @@ function TaskCart({ title }) {
 
     setTask("");
     setFlag(true);
-    setIsEdited(false);
+    setIsEdited(null);
   };
 
   return (
@@ -48,7 +48,9 @@ function TaskCart({ title }) {
       <ul className="flex items-center gap-4">
         <li className="cursor-pointer">Comment</li>
         <li className="cursor-pointer">Edit</li>
-        <li className="cursor-pointer">Delete</li>
+        <li className="cursor-pointer">
+          Delete
+        </li>
       </ul>
 
       <div className="relative w-full">
@@ -81,8 +83,9 @@ function TaskCart({ title }) {
         {list.map((data, index) => {
           return (
             <li
+              key={index}
               className={
-                isEdited
+                isEdited == index
                   ? "bg-blue-950 text-white p-3 font-bold w-full rounded-lg flex justify-between items-center"
                   : "bg-blue-300 text-blue-950 p-3 font-bold w-full rounded-lg flex justify-between items-center"
               }
