@@ -8,6 +8,7 @@ function App() {
   let [existErr, setExistErr] = useState("");
   let [isBTNClicked, setIsBTNClicked] = useState(false);
   let [currentIndex, setCurrentIndex] = useState();
+  let [isEdited, setIsEdited] = useState(null);
 
   let handleClick = () => {
     let newArr = [...createTask];
@@ -29,6 +30,7 @@ function App() {
 
   function editMainTask(index) {
     setIsBTNClicked(true);
+    setIsEdited(index);
     // console.log("Edit Clicked", index);
 
     let newArr = [...createTask];
@@ -38,11 +40,12 @@ function App() {
 
   function updateTask() {
     let newArr = [...createTask];
-    newArr[currentIndex] = taskName
-    setCreateTask(newArr)
+    newArr[currentIndex] = taskName;
+    setCreateTask(newArr);
 
-    setTaskName("")
-    setIsBTNClicked(false)
+    setTaskName("");
+    setIsBTNClicked(false);
+    setIsEdited(null);
   }
 
   return (
@@ -89,6 +92,7 @@ function App() {
                 key={index}
                 index={index}
                 title={data}
+                background="bg-green-700"
               />
             );
           })}

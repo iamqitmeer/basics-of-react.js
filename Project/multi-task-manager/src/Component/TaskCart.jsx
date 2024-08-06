@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function TaskCart({ title, onData, index, deleteMainTask, editMainTask }) {
+function TaskCart({ title, onData, index, deleteMainTask, editMainTask ,background}) {
   let [task, setTask] = useState();
   let [list, setList] = useState([]);
   let [flag, setFlag] = useState(true);
@@ -40,7 +40,7 @@ function TaskCart({ title, onData, index, deleteMainTask, editMainTask }) {
   };
 
   return (
-    <div className="w-[400px] bg-blue-700 rounded-xl p-6 text-white flex items-center flex-col w-full h-[500px] gap-6 mt-12">
+    <div className={"w-[400px] bg-blue-700 rounded-xl p-6 text-white flex items-center flex-col w-full h-[500px] gap-6 mt-12"}>
       <div>
         <h1 className="font-black text-4xl">{title}</h1>
       </div>
