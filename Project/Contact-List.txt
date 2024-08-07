@@ -1,0 +1,302 @@
+const contacts = [
+  {
+    name: "John Doe",
+    displayMessage: "Hey there! I am using this app.",
+    profileImage: "john.jpg",
+    isActive: true
+  },
+  {
+    name: "Jane Smith",
+    displayMessage: "Busy at the moment.",
+    profileImage: "jane.jpg",
+    isActive: false
+  },
+  {
+    name: "Alice Johnson",
+    displayMessage: "Loving the weather today!",
+    profileImage: "alice.jpg",
+    isActive: true
+  },
+  {
+    name: "Bob Brown",
+    displayMessage: "Can't talk, text only.",
+    profileImage: "bob.jpg",
+    isActive: true
+  },
+  {
+    name: "Charlie Davis",
+    displayMessage: "At work, please don't disturb.",
+    profileImage: "charlie.jpg",
+    isActive: false
+  },
+  {
+    name: "David Wilson",
+    displayMessage: "Feeling great!",
+    profileImage: "david.jpg",
+    isActive: true
+  },
+  {
+    name: "Eve Thompson",
+    displayMessage: "In a meeting.",
+    profileImage: "eve.jpg",
+    isActive: false
+  },
+  {
+    name: "Frank Garcia",
+    displayMessage: "Available for a chat.",
+    profileImage: "frank.jpg",
+    isActive: true
+  },
+  {
+    name: "Grace Martinez",
+    displayMessage: "On vacation.",
+    profileImage: "grace.jpg",
+    isActive: false
+  },
+  {
+    name: "Hank Lee",
+    displayMessage: "Listening to music.",
+    profileImage: "hank.jpg",
+    isActive: true
+  },
+  {
+    name: "Ivy Walker",
+    displayMessage: "Reading a book.",
+    profileImage: "ivy.jpg",
+    isActive: true
+  },
+  {
+    name: "Jack White",
+    displayMessage: "Feeling sleepy.",
+    profileImage: "jack.jpg",
+    isActive: false
+  },
+  {
+    name: "Karen Young",
+    displayMessage: "Cooking dinner.",
+    profileImage: "karen.jpg",
+    isActive: true
+  },
+  {
+    name: "Leo King",
+    displayMessage: "Watching a movie.",
+    profileImage: "leo.jpg",
+    isActive: false
+  },
+  {
+    name: "Mia Scott",
+    displayMessage: "Out with friends.",
+    profileImage: "mia.jpg",
+    isActive: true
+  },
+  {
+    name: "Nick Allen",
+    displayMessage: "At the gym.",
+    profileImage: "nick.jpg",
+    isActive: true
+  },
+  {
+    name: "Olivia Harris",
+    displayMessage: "Working on a project.",
+    profileImage: "olivia.jpg",
+    isActive: false
+  },
+  {
+    name: "Paul Wright",
+    displayMessage: "On a call.",
+    profileImage: "paul.jpg",
+    isActive: true
+  },
+  {
+    name: "Quinn Robinson",
+    displayMessage: "Studying.",
+    profileImage: "quinn.jpg",
+    isActive: true
+  },
+  {
+    name: "Rachel Clark",
+    displayMessage: "Out of town.",
+    profileImage: "rachel.jpg",
+    isActive: false
+  },
+  {
+    name: "Sam Lewis",
+    displayMessage: "Enjoying a coffee.",
+    profileImage: "sam.jpg",
+    isActive: true
+  },
+  {
+    name: "Tina Lee",
+    displayMessage: "Watching a TV show.",
+    profileImage: "tina.jpg",
+    isActive: false
+  },
+  {
+    name: "Uma Turner",
+    displayMessage: "In a meeting.",
+    profileImage: "uma.jpg",
+    isActive: true
+  },
+  {
+    name: "Victor Martinez",
+    displayMessage: "Writing a blog.",
+    profileImage: "victor.jpg",
+    isActive: true
+  },
+  {
+    name: "Wendy Adams",
+    displayMessage: "Out for a walk.",
+    profileImage: "wendy.jpg",
+    isActive: false
+  },
+  {
+    name: "Xander Perez",
+    displayMessage: "Having dinner.",
+    profileImage: "xander.jpg",
+    isActive: true
+  },
+  {
+    name: "Yara Bell",
+    displayMessage: "Playing games.",
+    profileImage: "yara.jpg",
+    isActive: true
+  },
+  {
+    name: "Zane Cook",
+    displayMessage: "Working late.",
+    profileImage: "zane.jpg",
+    isActive: false
+  },
+  {
+    name: "Abby Reed",
+    displayMessage: "At the beach.",
+    profileImage: "abby.jpg",
+    isActive: true
+  },
+  {
+    name: "Ben Stewart",
+    displayMessage: "Doing homework.",
+    profileImage: "ben.jpg",
+    isActive: true
+  },
+  {
+    name: "Clara Morris",
+    displayMessage: "Shopping.",
+    profileImage: "clara.jpg",
+    isActive: false
+  },
+  {
+    name: "Derek Ramirez",
+    displayMessage: "Taking a nap.",
+    profileImage: "derek.jpg",
+    isActive: true
+  },
+  {
+    name: "Ella Diaz",
+    displayMessage: "At the library.",
+    profileImage: "ella.jpg",
+    isActive: true
+  },
+  {
+    name: "Finn Cooper",
+    displayMessage: "Doing laundry.",
+    profileImage: "finn.jpg",
+    isActive: false
+  },
+  {
+    name: "Gina Howard",
+    displayMessage: "Watching the sunset.",
+    profileImage: "gina.jpg",
+    isActive: true
+  },
+  {
+    name: "Harry Long",
+    displayMessage: "Walking the dog.",
+    profileImage: "harry.jpg",
+    isActive: true
+  },
+  {
+    name: "Isla Hughes",
+    displayMessage: "Catching up on emails.",
+    profileImage: "isla.jpg",
+    isActive: false
+  },
+  {
+    name: "Jake Patel",
+    displayMessage: "At a concert.",
+    profileImage: "jake.jpg",
+    isActive: true
+  },
+  {
+    name: "Katie Nguyen",
+    displayMessage: "Relaxing at home.",
+    profileImage: "katie.jpg",
+    isActive: true
+  },
+  {
+    name: "Liam Wood",
+    displayMessage: "Having a picnic.",
+    profileImage: "liam.jpg",
+    isActive: false
+  },
+  {
+    name: "Maya Watson",
+    displayMessage: "Learning a new language.",
+    profileImage: "maya.jpg",
+    isActive: true
+  },
+  {
+    name: "Noah Brooks",
+    displayMessage: "At a workshop.",
+    profileImage: "noah.jpg",
+    isActive: true
+  },
+  {
+    name: "Olga Evans",
+    displayMessage: "Preparing for a trip.",
+    profileImage: "olga.jpg",
+    isActive: false
+  },
+  {
+    name: "Peter Sanders",
+    displayMessage: "Gardening.",
+    profileImage: "peter.jpg",
+    isActive: true
+  },
+  {
+    name: "Quincy James",
+    displayMessage: "Reading news.",
+    profileImage: "quincy.jpg",
+    isActive: true
+  },
+  {
+    name: "Rita Kelly",
+    displayMessage: "Doing yoga.",
+    profileImage: "rita.jpg",
+    isActive: false
+  },
+  {
+    name: "Steve Foster",
+    displayMessage: "Coding.",
+    profileImage: "steve.jpg",
+    isActive: true
+  },
+  {
+    name: "Tara Barnes",
+    displayMessage: "Painting.",
+    profileImage: "tara.jpg",
+    isActive: true
+  },
+  {
+    name: "Umar Green",
+    displayMessage: "Listening to a podcast.",
+    profileImage: "umar.jpg",
+    isActive: false
+  },
+  {
+    name: "Violet Gray",
+    displayMessage: "Playing the piano.",
+    profileImage: "violet.jpg",
+    isActive: true
+  }
+];
