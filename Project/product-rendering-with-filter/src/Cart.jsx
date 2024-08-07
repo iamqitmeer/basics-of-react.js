@@ -91,7 +91,6 @@ function Cart({ title, description, category, price, image }) {
                         </div>
                     </div>
                 </div>
-                    
                 <span
 
                     className="text-lg font-semibold leading-tight text-gray-900"
