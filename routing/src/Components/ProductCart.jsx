@@ -70,7 +70,7 @@ function ProductCart({ id, title, price, image,category }) {
 
 
                 <div class="mt-4 flex items-center justify-between gap-4">
-                    <p class="text-2xl font-extrabold leading-tight text-gray-900 dark:text-white">${Math.ceil(price + 50.35)}</p>
+                    <p class="text-2xl font-extrabold leading-tight text-gray-900 dark:text-white">${Math.ceil(price)}</p>
 <NavLink to={`/product/${id}`}>
 
                     <button type="button" class="inline-flex items-center rounded-lg bg-orange-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-orange-800 focus:outline-none focus:ring-4  focus:ring-orange-300 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">
